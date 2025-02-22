@@ -42,14 +42,14 @@
             <h5 class="text-center">Create a new account</h5>
             <p class="text-center text-muted">It's quick and easy.</p>
             <div class="row">
-                <div class="col-6 mb-2"><input type="text" class="form-control" placeholder="First name"></div>
-                <div class="col-6 mb-2"><input type="text" class="form-control" placeholder="Surname"></div>
+                <div class="col-6 mb-2"><input type="text" class="form-control" placeholder="First name" id="siUpFirst"></div>
+                <div class="col-6 mb-2"><input type="text" class="form-control" placeholder="Surname" id="siUpLast"></div>
             </div>
             <label class="form-label">Date of birth</label>
             <div class="row mb-2">
-                <div class="col"><select class="form-select"><option>19</option></select></div>
-                <div class="col"><select class="form-select"><option>Feb</option></select></div>
-                <div class="col"><select class="form-select"><option>2025</option></select></div>
+                <div class="col"><select class="form-select"><option id="siUpDate">19</option></select></div>
+                <div class="col"><select class="form-select"><option id="siUpMonth">Feb</option></select></div>
+                <div class="col"><select class="form-select"><option id="siUpYear">2025</option></select></div>
             </div>
             <label class="form-label">Gender</label>
             <div class="d-flex justify-content-between mb-2">
@@ -57,13 +57,14 @@
                 <label class="border rounded p-2 w-100 me-1"><input type="radio" name="gender"> Male</label>
                 <label class="border rounded p-2 w-100"><input type="radio" name="gender"> Custom</label>
             </div>
-            <input type="text" class="form-control mb-2" placeholder="Mobile number or email address">
-            <input type="password" class="form-control mb-2" placeholder="New password">
-            <button class="btn btn-signup text-white w-100 py-2">Sign Up</button>
+            <input type="text" class="form-control mb-2" placeholder="Mobile number or email address" id="siUpEmail">
+            <input type="password" class="form-control mb-2" placeholder="New password" id="siUpPass">
+            <button class="btn btn-signup text-white w-100 py-2" onclick="SignUp()">Sign Up</button>
             <div class="text-center mt-3">
-                <a href="#" class="text-decoration-none">Already have an account?</a>
+                <a href="index.html" class="text-decoration-none">Already have an account?</a>
             </div>
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
