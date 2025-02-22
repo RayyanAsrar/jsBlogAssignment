@@ -63,24 +63,15 @@ function SignUp() {
     };
 
     localStorage.setItem("user", JSON.stringify(user));
-
     alert("Sign-up successful! You can now log in.");
-
     window.location.href = "index.html";
 }
-
 function Login() {
     let storedUser = localStorage.getItem("user");
-
     if (storedUser) {
         let userData = JSON.parse(storedUser);
-
-        if (
-            loginEmail.value === userData.email &&
-            loginPass.value === userData.password
-        ) {
+        if (loginEmail.value === userData.email &&loginPass.value === userData.password) {
             alert("Login successful! Welcome, " + userData.firstName);
-
             window.location.href = "homepage.html";
         } else {
             alert("Invalid email or password. Please try again.");
