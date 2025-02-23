@@ -53,6 +53,10 @@ let siUpFirst = document.getElementById("siUpFirst");
 let siUpLast = document.getElementById("siUpLast");
 let siUpEmail = document.getElementById("siUpEmail");
 let siUpPass = document.getElementById("siUpPass");
+let prof = document.getElementById("prof");
+let sideMain = document.getElementById("sideMain");
+let namePost = document.getElementById("namePost");
+
 
 function SignUp() {
     let user = {
@@ -61,18 +65,26 @@ function SignUp() {
         email: siUpEmail.value,
         password: siUpPass.value,
     };
+    
+   if(siUpEmail.value!==""&&siUpPass.value!==""&&siUpFirst.value!==""&&siUpLast.value!==""){
 
-    localStorage.setItem("user", JSON.stringify(user));
-    alert("Sign-up successful! You can now log in.");
-    window.location.href = "index.html";
-}
+       localStorage.setItem("user", JSON.stringify(user));
+       alert("Sign-up successful! You can now log in.");
+       
+       window.location.href = "index.html";
+   }else  {
+    alert('Fill All The requirments')
+   }
+   } 
 function Login() {
     let storedUser = localStorage.getItem("user");
     if (storedUser) {
         let userData = JSON.parse(storedUser);
         if (loginEmail.value === userData.email &&loginPass.value === userData.password) {
             alert("Login successful! Welcome, " + userData.firstName);
-            window.location.href = "homepage.html";
+            localStorage.setItem("loggedInUser", userData.firstName+" "+userData.lastName);
+            window.location.href = "homepg.html";
+            // prof.innerHTML=userData.firstName
         } else {
             alert("Invalid email or password. Please try again.");
         }
@@ -81,3 +93,14 @@ function Login() {
         // window.location.href = "signup.html";
     }
 }
+let storedName = localStorage.getItem("loggedInUser");
+if (storedName) {
+    prof.innerHTML = storedName; 
+    sideMain.innerHTML = storedName; 
+    namePost.innerText = storedName; 
+    
+
+}
+
+
+
