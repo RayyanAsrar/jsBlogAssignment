@@ -84,7 +84,7 @@ function Login() {
             alert("Login successful! Welcome, " + userData.firstName);
             localStorage.setItem("loggedInUser", userData.firstName+" "+userData.lastName);
             window.location.href = "homepg.html";
-            // prof.innerHTML=userData.firstName
+            
         } else {
             alert("Invalid email or password. Please try again.");
         }
